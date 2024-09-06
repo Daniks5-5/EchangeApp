@@ -37,7 +37,9 @@ function EchangeSection() {
 
    return (
     <div className='EchangeSection'>
+         <h1>Курсы валют ЦБ РФ </h1>
     <div className='echange'>
+   
         <input className='input'
             id='input'
             placeholder='Поиск'
@@ -45,18 +47,20 @@ function EchangeSection() {
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <h1>Курсы валют</h1>
+   
 
         {searchTerm.trim() === '' ? ( //trim для удаления пробелов в начале и в конце строки
-            <div>Введите название валюты</div>
+            <div className ='name'>Введите название валюты</div>
         ) : filteredRates.length === 0 ? (
-            <div>Валюта не найдена</div>
+            <div className='undefind'>Валюта не найдена</div>
         ) : (
-            <ul>
+            <ul className='list'>
                 {filteredRates.map(rate => (
-                    <p key={rate.ID}>
-                        {rate.CharCode}: {rate.Name} - {rate.Value} RUB
-                    </p>
+                    <div key={rate.ID} className='list__text'>
+                       <p className='list__first'> 1 {rate.CharCode}, {rate.Name} </p> 
+                       <p className='list__ech'> Курс </p>
+                       <p className='list__second'>{rate.Value} Рублей </p> 
+                    </div>
                 ))}
             </ul>
         )}
