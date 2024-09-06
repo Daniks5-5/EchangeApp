@@ -1,0 +1,45 @@
+.EchangeSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #182023;
+    height: 100vh;
+
+}
+
+.echange::-webkit-scrollbar{
+    display: none;
+}
+
+.echange {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50px;
+    max-width: 1142px;
+    width: 100%;
+    height: 757px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.28), 0 14px 21px 0 rgba(0, 0, 0, 0.2), 0 16px 32px 0 rgba(0, 0, 0, 0.17), 0 16px 46px 0 rgba(0, 0, 0, 0.16), 0 17px 63px 0 rgba(0, 0, 0, 0.14), 0 18px 85px 0 rgba(0, 0, 0, 0.13), 0 21px 117px 0 rgba(0, 0, 0, 0.12), 0 33px 188px 0 rgba(0, 0, 0, 0.09);
+    background: #3C3C3C;
+    overflow: auto;
+
+
+    input {
+        border-radius: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 44px;
+        max-width: 926px;
+        width: 100%;
+        height: 55px;
+        background: #d9d9d9;
+    
+    }
+    p{
+     
+    }
+
+
+}

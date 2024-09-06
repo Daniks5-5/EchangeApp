@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom/client';
 import "./EchangeSection.css";
 
 function EchangeSection() {
@@ -37,8 +36,9 @@ function EchangeSection() {
    : [];
 
    return (
-    <div>
-        <input
+    <div className='EchangeSection'>
+    <div className='echange'>
+        <input className='input'
             id='input'
             placeholder='Поиск'
             type='text'
@@ -47,7 +47,7 @@ function EchangeSection() {
         />
         <h1>Курсы валют</h1>
 
-        {searchTerm.trim() === '' ? (
+        {searchTerm.trim() === '' ? ( //trim для удаления пробелов в начале и в конце строки
             <div>Введите название валюты</div>
         ) : filteredRates.length === 0 ? (
             <div>Валюта не найдена</div>
@@ -60,6 +60,7 @@ function EchangeSection() {
                 ))}
             </ul>
         )}
+    </div>
     </div>
 );
 }
