@@ -3,9 +3,11 @@ import "./EchangeSection.css";
 
 function EchangeSection() {
     const [rates, setRates] = useState(null); // Для хранения курсов валют
+    const [chars, setChar] = useState(null); // Для хранения курсов валют по коду
     const [loading, setLoading] = useState(true);  // Для отслеживания состояния загрузки
     const [error, setError] = useState(null); // Для хранения ошибок, если они возникнут
-    const [searchTerm, setSearchTerm] = useState('');  // Для хранения значения из input
+    const [searchTerm, setSearchTerm] = useState('');  // Для хранения значения из input по названию 
+    const [charValue, setCharValue] = useState(''); //для хранения значений из input по коду 
 
     useEffect(() => {
         // Запрос данных с API ЦБ РФ
@@ -18,6 +20,7 @@ function EchangeSection() {
             })
             .then(data => {
                 setRates(data.Valute); // Сохраняем данные о курсах валют
+                setChar(data.Valute);
                 setLoading(false);     // Устанавливаем состояние загрузки в false
             })
             .catch(error => {
@@ -35,6 +38,11 @@ function EchangeSection() {
        rate.Name.toLowerCase().includes(searchTerm.toLowerCase()))
    : [];
 
+   const filteredChar = chars
+   ? Object.values(chars).filter(char =>
+       char.CharCode.toLowerCase().includes(charValue.toLowerCase()))
+   : [];
+
    return (
     <div className='EchangeSection'>
          <h1>Курсы валют ЦБ РФ </h1>
@@ -44,26 +52,41 @@ function EchangeSection() {
             id='input'
             placeholder='Поиск'
             type='text'
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
+            value={searchTerm || charValue}
+            onChange={(event) => {
+                setSearchTerm(event.target.value);
+                setCharValue(event.target.value);
+              }}
+           
         />
    
 
-        {searchTerm.trim() === '' ? ( //trim для удаления пробелов в начале и в конце строки
-            <div className ='name'>Введите название валюты</div>
-        ) : filteredRates.length === 0 ? (
-            <div className='undefind'>Валюта не найдена</div>
-        ) : (
-            <ul className='list'>
-                {filteredRates.map(rate => (
-                    <div key={rate.ID} className='list__text'>
-                       <p className='list__first'> 1 {rate.CharCode}, {rate.Name} </p> 
-                       <p className='list__ech'> Курс </p>
-                       <p className='list__second'>{rate.Value} Рублей </p> 
-                    </div>
-                ))}
-            </ul>
-        )}
+   {searchTerm.trim() === '' && charValue.trim() === '' ? (
+    <div className='name'>Введите название валюты</div>
+) : filteredRates.length === 0 && filteredChar.length === 0 ? (
+    <div className='undefind'>Валюта не найдена</div>
+) : (
+    <ul className='list'>
+        {/* Отображаем filteredRates */}
+        {filteredRates.map(rate => (
+            <div key={rate.ID} className='list__text'>
+               <p className='list__first'>1 {rate.CharCode}, {rate.Name}</p>
+               <p className='list__ech'>Курс</p>
+               <p className='list__second'>{rate.Value} Рублей</p>
+            </div>
+        ))}
+        
+        {/* Отображаем filteredChar */}
+        {filteredChar.map(char => (
+            <div key={char.ID} className='list__text'>
+               <p className='list__first'>1 {char.CharCode}, {char.Name}</p>
+               <p className='list__ech'>Курс</p>
+               <p className='list__second'>{char.Value} Рублей</p>
+            </div>
+        ))}
+    </ul>
+)}
+
     </div>
     </div>
 );
