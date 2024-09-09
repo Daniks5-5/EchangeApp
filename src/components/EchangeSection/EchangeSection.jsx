@@ -44,7 +44,7 @@ function EchangeSection() {
    : [];
 
    return (
-    <div className='EchangeSection'>
+    <div className='EchangeSection' id='EchangeSection'>
          <h1>Курсы валют ЦБ РФ </h1>
     <div className='echange'>
    
@@ -78,7 +78,7 @@ function EchangeSection() {
         
         {/* Отображаем filteredChar */}
         {filteredChar.map(char => (
-            <div key={char.ID} className='list__text'>
+            <div key={char.ID} className='list__text' id="list">
                <p className='list__first'>1 {char.CharCode}, {char.Name}</p>
                <p className='list__ech'>Курс</p>
                <p className='list__second'>{char.Value} Рублей</p>

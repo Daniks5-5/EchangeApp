@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import './App.css'
 import EchangeSection from './components/EchangeSection/EchangeSection'
+import MainSection from './components/MainSection/MainSection'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-  <EchangeSection />
+    <div>
+         <MainSection />
+         <EchangeSection />
+
+    </div>
+
   )
 }
 

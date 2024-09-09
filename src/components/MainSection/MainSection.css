@@ -1,0 +1,117 @@
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../assets/backMain.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.mainSection .content {
+  max-width: 1150px;
+  margin: 0% auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+.mainSection .content h1 {
+  margin-top: 240px;
+  font-weight: 500;
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 0 49px 32px 0 rgba(0, 0, 0, 0.52), 0 92px 58px 0 rgba(0, 0, 0, 0.5), 0 121px 85px 0 rgba(0, 0, 0, 0.48), 0 132px 117px 0 rgba(0, 0, 0, 0.46), 0 125px 167px 0 rgba(0, 0, 0, 0.42), 0 100px 304px 0 rgba(0, 0, 0, 0.33);
+}
+.mainSection .link {
+  margin-top: 300px;
+}
+.mainSection .link .img {
+  max-width: 137px;
+  width: 100%;
+  transition: transform 0.2s;
+}
+.mainSection .link:hover {
+  transform: scale(1.1);
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .mainSection .content {
+    padding-top: 200px;
+    max-width: 900px;
+    width: 100%;
+    margin: 0% auto;
+  }
+  .mainSection .content h1 {
+    padding-left: 70px;
+    font-weight: 500;
+    font-size: 50px;
+    color: #fff;
+  }
+  .mainSection .link .img {
+    max-width: 137px;
+    width: 100%;
+    transition: transform 0.2s;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .mainSection .content {
+    padding-top: 200px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0% auto;
+  }
+  .mainSection .content h1 {
+    padding-left: 70px;
+    font-weight: 500;
+    font-size: 50px;
+    color: #fff;
+  }
+  .mainSection .link {
+    margin-top: 150px;
+  }
+  .mainSection .link .img {
+    max-width: 137px;
+    width: 100%;
+    transition: transform 0.2s;
+  }
+}
+@media (min-width: 300px) and (max-width: 600px) {
+  .mainSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+  .mainSection .content {
+    padding-top: 50px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0% auto;
+  }
+  .mainSection .content h1 {
+    padding-left: 40px;
+    font-weight: 500;
+    font-size: 50px;
+    color: #fff;
+  }
+  .mainSection .link {
+    margin-top: 50px;
+  }
+  .mainSection .link .img {
+    max-width: 70px;
+    width: 100%;
+    transition: transform 0.2s;
+  }
+}/*# sourceMappingURL=MainSection.css.map */
