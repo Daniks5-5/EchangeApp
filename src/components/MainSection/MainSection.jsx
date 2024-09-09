@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button  from '../../assets/button.svg';
 import './MainSection.css';
+import Header from '../Header/Header';
 
 function MainSection() {
   const [time, setTime] = useState(new Date());
@@ -24,6 +25,7 @@ function MainSection() {
 
   return (
     <div className="mainSection">
+        <Header/>
       <div className="content">
         <h1>Курсы валют ЦБ РФ на {timeString}</h1>
       </div>

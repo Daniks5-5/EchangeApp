@@ -8,6 +8,9 @@
   width: 100%;
   height: 100vh;
 }
+.mainSection Header {
+  margin-top: 40px;
+}
 .mainSection .content {
   max-width: 1150px;
   margin: 0% auto;
@@ -16,7 +19,7 @@
   width: 100%;
 }
 .mainSection .content h1 {
-  margin-top: 240px;
+  margin-top: 200px;
   font-weight: 500;
   font-size: 50px;
   color: #fff;
@@ -73,7 +76,8 @@
     margin: 0% auto;
   }
   .mainSection .content h1 {
-    padding-left: 70px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-weight: 500;
     font-size: 50px;
     color: #fff;
@@ -95,7 +99,7 @@
     overflow: hidden;
   }
   .mainSection .content {
-    padding-top: 50px;
+    padding-top: 20px;
     max-width: 500px;
     width: 100%;
     margin: 0% auto;
