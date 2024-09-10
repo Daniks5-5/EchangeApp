@@ -7,9 +7,17 @@ header {
     border-radius: 50px;
     background: rgba(0, 0, 0, 0.2);
 
+    .menu-toggle {
+        display: none;
+    }
+
 
     nav {
         margin-top: 14px;
+
+        .burger-menu {
+            display: none;
+        }
 
 
         ul {
@@ -18,11 +26,219 @@ header {
             gap: 74px;
 
             li {
+                list-style-type: none;
+
                 a {
                     text-decoration: none;
                     font-weight: 300;
                     font-size: 18px;
                     color: #fff;
+                }
+
+                a:hover {
+                    color: rgba(255, 255, 255, 0.5);
+                    text-decoration: underline;
+
+                }
+            }
+
+        }
+
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    header {
+        background-color: rgba(255, 0, 0, 0);
+        nav {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 10;
+
+            /* burger-menu */
+            .burger-menu {
+                position: absolute;
+                right: 5px;
+                top: 25px;
+                width: 40px;
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                z-index: 9999;
+
+                &__line {
+                    width: 100%;
+                    height: 4px;
+                    background-color: #fff;
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            /* Скрываем меню по умолчанию */
+            .menu {
+                display: none;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+           
+            }
+
+            /* Показываем меню при активном состоянии */
+            .menu.active {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 274px;
+                height: 100vh;
+                background-color: white;
+                transition: all 0.3s ease;
+               
+            }
+
+            /* Анимация крестика для бургер-меню */
+            .menu-toggle:checked+.burger-menu .burger-menu__line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+                background-color: black;
+            }
+
+            .menu-toggle:checked+.burger-menu .burger-menu__line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle:checked+.burger-menu .burger-menu__line:nth-child(3) {
+                transform: rotate(-45deg) translate(14px, -13px);
+                background-color: black;
+            }
+
+            /* Стили для меню */
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                list-style: none;
+                padding: 0;
+                
+
+                li a {
+             
+                    padding-left: 15px;
+                    text-decoration: none;
+                    font-weight: 300;
+                    font-size: 18px;
+                    color: black;
+                    transition: color 0.3s;
+                }
+                li{
+                    margin-top: 20px;
+                }
+
+                li a:hover {
+                    color: rgba(255, 255, 255, 0.5);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width:300px) and (max-width:600px) {
+    header {
+        background-color: rgba(255, 0, 0, 0);
+        nav {
+            position: fixed;
+            right: 0;
+            top: 0;
+            z-index: 10;
+
+            /* burger-menu */
+            .burger-menu {
+                position: absolute;
+                right: 5px;
+                top: 25px;
+                width: 40px;
+                height: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                z-index: 9999;
+
+                &__line {
+                    width: 100%;
+                    height: 4px;
+                    background-color: #fff;
+                    border-radius: 2px;
+                    transition: all 0.3s ease;
+                }
+            }
+
+            /* Скрываем меню по умолчанию */
+            .menu {
+                display: none;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+           
+            }
+
+            /* Показываем меню при активном состоянии */
+            .menu.active {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 274px;
+                height: 100vh;
+                background-color: white;
+                transition: all 0.3s ease;
+               
+            }
+
+            /* Анимация крестика для бургер-меню */
+            .menu-toggle:checked+.burger-menu .burger-menu__line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+                background-color: black;
+            }
+
+            .menu-toggle:checked+.burger-menu .burger-menu__line:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle:checked+.burger-menu .burger-menu__line:nth-child(3) {
+                transform: rotate(-45deg) translate(14px, -13px);
+                background-color: black;
+            }
+
+            /* Стили для меню */
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                list-style: none;
+                padding: 0;
+                
+
+                li a {
+             
+                    padding-left: 15px;
+                    text-decoration: none;
+                    font-weight: 300;
+                    font-size: 18px;
+                    color: black;
+                    transition: color 0.3s;
+                }
+                li{
+                    margin-top: 20px;
+                }
+
+                li a:hover {
+                    color: rgba(255, 255, 255, 0.5);
+                    text-decoration: underline;
                 }
             }
         }
