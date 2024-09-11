@@ -1,19 +1,23 @@
-import { useState } from 'react'
-import './App.css'
-import EchangeSection from './components/EchangeSection/EchangeSection'
-import MainSection from './components/MainSection/MainSection'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePages from './pages/HomePages';
+import LoginPages from './pages/LoginPages';
+import AboutPages from './pages/AboutPages';
+import RegisterPages from './pages/RegisterPages';
+import MainPages from './pages/MainPages';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-         <MainSection />
-         <EchangeSection />
-
-    </div>
-
-  )
+    <Router>
+      <MainPages />
+      
+      <Routes>
+        <Route path='/' element={<HomePages />} />
+        <Route path='/login' element={<LoginPages />} />
+        <Route path='/register' element={<RegisterPages />} />
+        <Route path='/about' element={<AboutPages />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "@effective/css-reset/typography.css";
 import './Header.css';
+import { Link } from "react-router-dom";
 
 function Header() {
     const [nav, setNav] = useState(false);
@@ -31,7 +32,7 @@ function Header() {
                 {/* Меню, которое зависит от состояния nav */}
                 <ul className={nav ? "menu active" : "menu"}>
                     <li><a href="#" onClick={handleMenuClick}>Курс</a></li>
-                    <li><a href="#" onClick={handleMenuClick}>Главная</a></li>
+                    <li><Link to='/'>Главная</Link></li>
                     <li><a href="#" onClick={handleMenuClick}>О проекте</a></li>
                     <li><a href="#" onClick={handleMenuClick}>Вход</a></li>
                 </ul>

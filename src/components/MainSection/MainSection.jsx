@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button  from '../../assets/button.svg';
 import './MainSection.css';
 import Header from '../Header/Header';
+import EchangeSection from '../EchangeSection/EchangeSection';
 
 function MainSection() {
   const [time, setTime] = useState(new Date());
@@ -32,7 +33,9 @@ function MainSection() {
      <div className='link'>
      <a href='#EchangeSection'> <img src={Button} className='img'/></a> 
      </div>
+     <EchangeSection />
     </div>
+
   );
 }
 
